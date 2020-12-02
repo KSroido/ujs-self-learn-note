@@ -13,7 +13,7 @@ int main()
 
     cout << "Input  numerator/denominator: ";
 	cin >> str;
-	regex_match(str, result, pattern);    //ÀûÓÃÕýÔò
+	regex_match(str, result, pattern);   
 	numerator = result[1];
 	denominator = result[2];
 	n = stoi(numerator, 0, 10);           //这里的result得到的是string类型,需要使用非标准函数stoi进行转换
