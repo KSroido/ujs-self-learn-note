@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-	double n,nums;   //ÈËÊı
+	double n,nums;   
 	double temp, total;
 	cout << "Input num of student:" << endl;
 	total = 0;
