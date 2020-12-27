@@ -7,7 +7,8 @@ bool charge(int a,vector<int>* b,vector<int>* c,vector<int>* d);
 
 int main() {
     vector<int> memory;
-    vector<int>* memoryPoint=&memory;
+    vector<int>* memoryPoint=&memory;  //父函数当中定义指针
+    //向子函数传入指针,跳出子函数后指针操作的变量仍处于被改变的状态
     vector<int> firstVector;
     vector<int>* firstVectorP=&firstVector;
     vector<int> secondVector;
@@ -18,7 +19,9 @@ int main() {
     for (int i = bottom;i<=top;i++){
         if(charge(i,memoryPoint,firstVectorP,secondVectorP)){
             vector<int>::iterator k =memory.end();
-            if( find(memory.begin() , memory.end() , i) != k ) continue;
+            // find函数的返回值为迭代器
+            if( find(memory.begin() , memory.end() , i) != k ) continue; //continue为停止当前轮次循环,进入下一轮次循环
+            //break为 停止本层循环接下来的所有操作
             cout<<serialNumber<<endl;
             cout<<i<<":"<<1<<"+";
             for (unsigned int j = 0 ;j< firstVector.size();j++) {
